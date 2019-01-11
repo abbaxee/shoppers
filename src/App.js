@@ -13,6 +13,7 @@ import ShopComponent from './components/Shop';
 import CategoryComponent from './components/Category';
 import CatalogComponent from './components/Catalog';
 import AddCatalogComponent from './components/AddCatalog';
+import ScrollToTop from './ScrollToTop'
 
 import { Provider } from 'react-redux';
 import store, { history } from './store';
@@ -24,8 +25,8 @@ class App extends Component {
   render() {  
     return (
       <Provider store={store}>
-        <Router history={history}>
-          <Switch>
+        <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
+          <ScrollToTop>
             <Route exact path="/" component={HomeComponent} />
             <Route path="/about" component={About} />
             <Route exact path="/shop" component={ShopComponent} />
@@ -38,7 +39,7 @@ class App extends Component {
             <Route path="/catalog/add" component={AddCatalogComponent} />
             <Route path="/catalog/add-category" component={AddCategoryComponent} />
             <Route component={NotFound} />
-          </Switch>
+          </ScrollToTop>
         </Router>  
       </Provider>
     );

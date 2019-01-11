@@ -48,6 +48,7 @@ class SingleItem extends Component {
       };
       console.log(cartItem);
       this.props.addToCart(cartItem);
+      this.props.history.push('/cart')
     }
 
     return (

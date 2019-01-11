@@ -1,8 +1,16 @@
 import React from 'react'
-import Cloth_1 from '../images/cloth_1.jpg'
-import Cloth_2 from '../images/cloth_2.jpg'
+import { Link } from 'react-router-dom';
 
 export default (props) => {
+
+  const cartTotal = () => {
+    let total = 0
+      for (let i = 0; i < props.cart.length; i++) {
+        total += parseFloat(props.cart[i].totalPrice);
+      }
+    return total;
+  }
+  
   return (
     <div>
       <div className="site-section">
@@ -36,7 +44,7 @@ export default (props) => {
                             <td>${item.price}</td>
                             <td>{item.quantity}</td>
                             <td>${item.totalPrice}</td>
-                            <td><a href="/" className="btn btn-primary btn-sm">X</a></td>
+                            <td><button href="/" className="btn btn-primary btn-sm">X</button></td>
                           </tr>
                         </tbody>
                       )
@@ -51,11 +59,8 @@ export default (props) => {
           <div className="row">
             <div className="col-md-6">
               <div className="row mb-5">
-                <div className="col-md-6 mb-3 mb-md-0">
-                  <button className="btn btn-primary btn-sm btn-block">Update Cart</button>
-                </div>
                 <div className="col-md-6">
-                  <button className="btn btn-outline-primary btn-sm btn-block">Continue Shopping</button>
+                  <Link to='/shop'className="btn btn-outline-primary btn-sm btn-block">Continue Shopping</Link>
                 </div>
               </div>
               <div className="row">
@@ -84,7 +89,7 @@ export default (props) => {
                       <span className="text-black">Subtotal</span>
                     </div>
                     <div className="col-md-6 text-right">
-                      <strong className="text-black">$230.00</strong>
+                      <strong className="text-black">${cartTotal()}</strong>
                     </div>
                   </div>
                   <div className="row mb-5">
@@ -92,7 +97,7 @@ export default (props) => {
                       <span className="text-black">Total</span>
                     </div>
                     <div className="col-md-6 text-right">
-                      <strong className="text-black">$230.00</strong>
+                      <strong className="text-black">${cartTotal()}</strong>
                     </div>
                   </div>
 
