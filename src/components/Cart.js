@@ -12,7 +12,7 @@ class Cart extends Component {
 				<div className="site-wrap">
 					<Header name='Cart' />
 					<Pagination name='Cart' />
-					<ShoppingCart />
+					<ShoppingCart cart={this.props.cart.cartItems}/>
 					<Footer />
 				</div>
 			);
@@ -21,4 +21,5 @@ class Cart extends Component {
 
 
 
-export default Cart;
+const mapStateToProps = ({cart}) => ({cart});
+export default connect(mapStateToProps)(Cart);

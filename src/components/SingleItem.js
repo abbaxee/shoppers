@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import Header from './Header';
 import ShopPagination from './ShopPagination';
 import Footer from './Footer';
+import { addToCart } from '../reducers/cart'
+
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class SingleItem extends Component {
 
   state = {
-    quantity: 1
+    quantity: 1,
+    selectedSize: 'small'
   }
   
   increment = () => {
@@ -20,13 +24,32 @@ class SingleItem extends Component {
     this.setState({quantity: this.state.quantity - 1 })
   }
 
+  handleOptionChange = e => {
+    this.setState({
+      selectedSize: e.target.value
+    });
+  };
+
   render() {
 
     const { shopItems } = this.props.shopItems;
     
     const i = shopItems.findIndex((item)=>item.id === this.props.match.params.id);
     const item = shopItems[i];
-  
+    
+    const handleAddToCart = () => {
+      const cartItem = {
+        id: item.id,
+        name: item.name,
+        quantity: this.state.quantity,
+        price: item.price,
+        size: this.state.selectedSize,
+        image: item.display_src
+      };
+      console.log(cartItem);
+      this.props.addToCart(cartItem);
+    }
+
     return (
       <div className="site-wrap">
         <Header name="Shop"/>  
@@ -42,14 +65,14 @@ class SingleItem extends Component {
                 <p>{item.description}</p>
                 <p><strong className="text-primary h4">${item.price}</strong></p>
                 <div className="mb-1 d-flex">
-                  <label for="option-sm" className="d-flex mr-3 mb-3">
-                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-sm" name="shop-sizes" /></span> <span className="d-inline-block text-black">Small</span>
+                  <label htmlFor="option-sm" className="d-flex mr-3 mb-3">
+                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-sm" name="shop-sizes" value="small" onChange={this.handleOptionChange}/></span> <span className="d-inline-block text-black">Small</span>
                   </label>
-                  <label for="option-md" className="d-flex mr-3 mb-3">
-                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-md" name="shop-sizes" /></span> <span className="d-inline-block text-black">Medium</span>
+                  <label htmlFor="option-md" className="d-flex mr-3 mb-3">
+                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-md" name="shop-sizes" value="medium" onChange={this.handleOptionChange}/></span> <span className="d-inline-block text-black">Medium</span>
                   </label>
-                  <label for="option-lg" className="d-flex mr-3 mb-3">
-                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-lg" name="shop-sizes" /></span> <span className="d-inline-block text-black">Large</span>
+                  <label htmlFor="option-lg" className="d-flex mr-3 mb-3">
+                    <span className="d-inline-block mr-2" style={{top:-2, position: 'relative'}}><input type="radio" id="option-lg" name="shop-sizes" value="large" onChange={this.handleOptionChange}/></span> <span className="d-inline-block text-black">Large</span>
                   </label>
                 </div>
                 <div className="mb-5">
@@ -64,7 +87,7 @@ class SingleItem extends Component {
                 </div>
 
                 </div>
-                <p><a href="cart.html" className="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+                <p><button onClick={() => handleAddToCart() } className="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
 
               </div>
             </div>
@@ -77,4 +100,9 @@ class SingleItem extends Component {
 }
 
 const mapStateToProps = ({shopItems}) => ({shopItems});
-export default connect(mapStateToProps)(SingleItem);
+
+const mapDispachToProps = (dispatch) => {
+  return bindActionCreators({ addToCart }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispachToProps)(SingleItem);
