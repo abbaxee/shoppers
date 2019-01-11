@@ -61,7 +61,7 @@ export default function (state = defaultState, action) {
 // actions
 export const sortShop = (storeItems, filter) => {
     return {
-      type: ADD_ITEM,
+      type: SORT_ITEMS,
       filter,
       storeItems
     }
@@ -70,7 +70,7 @@ export const sortShop = (storeItems, filter) => {
 
 export function addItem(item) {
   return {
-    type: SORT_ITEMS,
+    type: ADD_ITEM,
     item
   }
 }

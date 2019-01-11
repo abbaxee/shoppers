@@ -27,18 +27,20 @@ class App extends Component {
       <Provider store={store}>
         <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
           <ScrollToTop>
-            <Route exact path="/" component={HomeComponent} />
-            <Route path="/about" component={About} />
-            <Route exact path="/shop" component={ShopComponent} />
-            <Route path="/shop/:id" component={SingleItemComponent} />
-            <Route exact path="/category" component={CategoriesComponent}/>
-            <Route exact path="/category/:name" component={CategoryComponent}/>
-            <Route path="/cart" component={CartComponent} />
-            <Route path="/contact" component={Contact} />
-            <Route exact path="/catalog" component={CatalogComponent} />
-            <Route path="/catalog/add" component={AddCatalogComponent} />
-            <Route path="/catalog/add-category" component={AddCategoryComponent} />
-            <Route component={NotFound} />
+            <Switch>
+              <Route exact path="/" component={HomeComponent} />
+              <Route path="/about" component={About} />
+              <Route exact path="/shop" component={ShopComponent} />
+              <Route path="/shop/:id" component={SingleItemComponent} />
+              <Route exact path="/category" component={CategoriesComponent}/>
+              <Route exact path="/category/:name" component={CategoryComponent}/>
+              <Route path="/cart" component={CartComponent} />
+              <Route path="/contact" component={Contact} />
+              <Route exact path="/catalog" component={CatalogComponent} />
+              <Route path="/catalog/add" component={AddCatalogComponent} />
+              <Route path="/catalog/add-category" component={AddCategoryComponent} />
+              <Route component={NotFound} />
+            </Switch>    
           </ScrollToTop>
         </Router>  
       </Provider>

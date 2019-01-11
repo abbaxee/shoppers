@@ -49,9 +49,9 @@ export default () => {
               <div className="block-5 mb-5">
                 <h3 className="footer-heading mb-4">Contact Info</h3>
                 <ul className="list-unstyled">
-                  <li className="address">203 Fake St. Mountain View, San Francisco, California, USA</li>
-                  <li className="phone"><Link to="tel://23923929210">+2 392 3929 210</Link></li>
-                  <li className="email">emailaddress@domain.com</li>
+                  <li className="address">Abuja, Nigeria</li>
+                  <li className="phone"><Link to="tel://23923929210">+2347067533931</Link></li>
+                  <li className="email">abbaxee2@gmail.com</li>
                 </ul>
               </div>
 
