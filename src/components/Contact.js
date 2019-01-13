@@ -15,9 +15,7 @@ export default () => {
               <h2 className="h3 mb-3 text-black">Get In Touch</h2>
             </div>
             <div className="col-md-7">
-
               <form>
-                
                 <div className="p-3 p-lg-5 border">
                   <div className="form-group row">
                     <div className="col-md-6">
@@ -41,7 +39,6 @@ export default () => {
                       <input type="text" className="form-control" id="c_subject" name="c_subject" />
                     </div>
                   </div>
-
                   <div className="form-group row">
                     <div className="col-md-12">
                       <label htmlFor="c_message" className="text-black">Message </label>
@@ -62,11 +59,11 @@ export default () => {
                 <p className="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
               </div>
               <div className="p-4 border mb-3">
-                <span className="d-block text-primary h6 text-uppercase">London</span>
+                <span className="d-block text-primary h6 text-uppercase">Abuja</span>
                 <p className="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
               </div>
               <div className="p-4 border mb-3">
-                <span className="d-block text-primary h6 text-uppercase">Canada</span>
+                <span className="d-block text-primary h6 text-uppercase">Lagos</span>
                 <p className="mb-0">203 Fake St. Mountain View, San Francisco, California, USA</p>
               </div>
 

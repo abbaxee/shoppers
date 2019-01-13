@@ -2,7 +2,7 @@ import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 
 export default (props) => {
-
+  const featured =  props.shopItems.filter(item => item.isFeatured === true);
   return (
     <div>
       <div className="site-section block-3 site-blocks-2 bg-light">
@@ -40,7 +40,7 @@ export default (props) => {
               >
 
                 {
-                  props.shopItems.filter(item => item.isFeatured === true).map(item => {
+                 featured.map(item => {
                     return(
                       <div key={item.id} className="item">
                         <div className="block-4 text-center">

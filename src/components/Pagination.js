@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default (props) => {
+	//TODO build a universal pagination
   return (
     <div>
       <div className="bg-light py-3">

@@ -27,16 +27,16 @@ class ShopFilter extends Component {
     }
 
     filterSizesSum = (size) => {
-      let total = 0
-      for (let i = 0; i < this.props.shopItems.length; i++) {
-        total += parseFloat(this.props.shopItems[i].quantity[size]);
+      let total = 0;
+      const { shopItems } = this.props;
+      for (let i = 0; i < shopItems.length; i++) {
+        total += parseFloat(shopItems[i].quantity[size]);
       }
       return total;
     }
 
     render() {
-      return (
-        
+      return ( 
         <div>
            <div className="border p-4 rounded mb-4">
               <h3 className="mb-3 h6 text-uppercase text-black d-block">Categories</h3>

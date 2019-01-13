@@ -13,9 +13,9 @@ class AddCategory extends Component {
       e.preventDefault();
       const name = this.nameRef.current.value;
       const id = Date.now();
-      console.log('function', this.props.addCategory)
-      this.props.addCategory(id, name);
-      e.currentTarget.reset();
+      const { addCategory, history } = this.props;
+      addCategory(id, name);
+      history.push('/category');
     }
 
     render() {

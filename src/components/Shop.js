@@ -19,8 +19,7 @@ class Shop extends Component {
     return (
       <div>
         <Header name='Shop'/>
-        <Pagination name="Shop" />
-        
+        <Pagination name="Shop" />   
         <div className="site-section">
           <div className="container">
             <div className="row mb-5">
@@ -33,8 +32,6 @@ class Shop extends Component {
             </div>
           </div>
         </div>  
-        
-      
         <Footer />
       </div>
     );

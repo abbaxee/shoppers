@@ -19,9 +19,8 @@ class SingleItem extends Component {
   }
 
   decrement = () => {
-    this.state.quantity === 1 ? 
-    this.setState({quantity: this.state.quantity = 1}) : 
-    this.setState({quantity: this.state.quantity - 1 })
+    const qty = this.state.quantity
+    this.setState({quantity: qty === 1 ? 1 : qty -1})
   }
 
   handleOptionChange = e => {
@@ -38,6 +37,7 @@ class SingleItem extends Component {
     const item = shopItems[i];
     
     const handleAddToCart = () => {
+      const {addToCart, history} = this.props;
       const cartItem = {
         id: item.id,
         name: item.name,
@@ -46,9 +46,8 @@ class SingleItem extends Component {
         size: this.state.selectedSize,
         image: item.display_src
       };
-      console.log(cartItem);
-      this.props.addToCart(cartItem);
-      this.props.history.push('/cart')
+      addToCart(cartItem);
+      history.push('/cart');
     }
 
     return (

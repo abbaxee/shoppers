@@ -27,15 +27,16 @@ const newItem = (item) => ({
     id: Date.now(),
     name: item.name,
     category: item.category,
-    price: item.price,
+    price: parseFloat(item.price) || 0,
     isFeatured: false,
     quantity: {
-        small: item.small,
-        medium: item.medium,
-        large: item.large,
+        small: parseInt(item.small) || 0,
+        medium: parseInt(item.medium) || 0,
+        large: parseInt(item.large) || 0,
     },
     description: item.description,
-    display_src : `https://picsum.photos/400/400/?image=${Math.floor((Math.random() * 85))}`
+    display_src : item.image,
+    
 });
 
 // create an object for the default data

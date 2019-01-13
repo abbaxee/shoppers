@@ -16,7 +16,7 @@ export default (props) => {
       <div className="site-section">
         <div className="container">
           <div className="row mb-5">
-            <form className="col-md-12" method="post">
+            <div className="col-md-12">
               <div className="site-blocks-table">
                 <table className="table table-bordered">
                   <thead>
@@ -31,9 +31,9 @@ export default (props) => {
                   </thead>
                   
                   {
-                    props.cart.map( item => {
-                      return(
-                        <tbody> 
+                    props.cart.map( (item, index) => {
+                      return( 
+                        <tbody key={item.id}> 
                           <tr>
                             <td className="product-thumbnail">
                               <img src={item.image} alt="" className="img-fluid" />
@@ -44,7 +44,7 @@ export default (props) => {
                             <td>${item.price}</td>
                             <td>{item.quantity}</td>
                             <td>${item.totalPrice}</td>
-                            <td><button href="/" className="btn btn-primary btn-sm">X</button></td>
+                            <td><button onClick={() => props.removeFromCart(index)} className="btn btn-primary btn-sm">X</button></td>
                           </tr>
                         </tbody>
                       )
@@ -53,7 +53,7 @@ export default (props) => {
                   
                 </table>
               </div>
-            </form>
+            </div>
           </div>
 
           <div className="row">

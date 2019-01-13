@@ -10,23 +10,25 @@ import { connect } from 'react-redux';
 class Catalog extends Component {
 
     itemQuantitySum = (item) => {
-      return parseFloat(item.quantity.small + item.quantity.medium + item.quantity.large);
+      return (item.quantity.small + item.quantity.medium + item.quantity.large);
     }
 
     totalQuantitySum = (items) =>{
       let total = 0;
-      items.map(item => total += this.itemQuantitySum(item));
-      return parseFloat(total);
-    }
+      items.forEach(item => {
+         total += this.itemQuantitySum(item);
+      })
+      return total;
+  }
 
     totalPriceSum = (items) => {
       let total = 0;
       items.map(item => total += item.price);
-      return total.toFixed(2);
+      return total;
     }
 
     renderCatalog = (items) => {
-      items.map(item => {
+      return items.map(item => {
         return (
           <tr>
             <td className="product-thumbnail">
@@ -107,24 +109,7 @@ class Catalog extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                        {
-                          shopItems.map(item => {
-                            return (
-                              <tr key={item.key}>
-                                <td className="product-thumbnail">
-                                  <img src={item.display_src} alt="item image" className="img-fluid" />
-                                </td>
-                                <td className="product-name">
-                                  <h2 className="h5 text-black">{item.name}</h2>
-                                </td>
-                                <td>${item.price.toFixed(2)}</td>
-                                <td>{this.itemQuantitySum(item)}</td>
-                                <td><a href="/" className="btn btn-primary btn-sm">Update</a></td>
-                                <td><a href="/" className="btn btn-primary btn-sm">X</a></td>
-                              </tr>
-                            );
-                          })
-                        }
+                        {this.renderCatalog(shopItems)}
                       </tbody>
                     </table>
                   </div>

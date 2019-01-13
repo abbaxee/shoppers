@@ -42,7 +42,7 @@ export default () => {
               <Link to="/shop" className="block-6">
                 <img src={ BackgroundImage } alt="" className="img-fluid rounded mb-4" />
                 <h3 className="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-                <p>Promo from  nuary 15 &mdash; 25, 2019</p>
+                <p>Promo from  January 15 &mdash; 25, 2019</p>
               </Link>
             </div>
             <div className="col-md-6 col-lg-3">
@@ -50,7 +50,7 @@ export default () => {
                 <h3 className="footer-heading mb-4">Contact Info</h3>
                 <ul className="list-unstyled">
                   <li className="address">Abuja, Nigeria</li>
-                  <li className="phone"><Link to="tel://23923929210">+2347067533931</Link></li>
+                  <li className="phone">+2347067533931</li>
                   <li className="email">abbaxee2@gmail.com</li>
                 </ul>
               </div>
@@ -70,11 +70,10 @@ export default () => {
             <div className="col-md-12">
               <p>
               {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
-              Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This Site is made with <i className="icon-heart" aria-hidden="true"></i> using <Link to="https://colorlib.com" target="_blank" className="text-primary" rel="noopener noreferrer">Colorlib Template</Link>
+              Copyright &copy;{(new Date().getFullYear())} All rights reserved | This Site is made with <i className="icon-heart" aria-hidden="true"></i> using <Link to="https://colorlib.com" target="_blank" className="text-primary" rel="noopener noreferrer">Colorlib template</Link>
               {/* <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> */}
               </p>
-            </div>
-            
+            </div>    
           </div>
         </div>
       </footer>

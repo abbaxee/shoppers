@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function Header(props) {
+  
+  const activeNav = (name) => {
+    return props.name === name ? 'active' : '';
+  }
+  
   return (
     <div>
       <header className="site-navbar" role="banner">
@@ -46,17 +51,13 @@ function Header(props) {
         <nav className="site-navigation text-right text-md-center" role="navigation">
           <div className="container">
             <ul className="site-menu js-clone-nav d-none d-md-block">
-              <li className={ props.name === 'Home' ? 'active' : ''}>
-                <Link to="/">Home</Link>
-              </li>
-              <li className={ props.name === 'About' ? 'active' : ''}>
-                <Link to="/about">About</Link>
-              </li>
-              <li className={props.name === 'Shop' ? 'active' : ''}><Link to="/shop">Shop</Link></li>
-              <li className={props.name === 'Category' ? 'active' : ''}><Link to="/category">Categories</Link></li>
-              <li className={props.name === 'Catalog' ? 'active' : ''}><Link to="/catalog">Catalogue</Link></li>
+              <li className={ activeNav('Home') }> <Link to="/">Home</Link></li>
+              <li className={ activeNav('About') }> <Link to="/about">About </Link></li>
+              <li className={ activeNav('Shop') }><Link to="/shop">Shop</Link></li>
+              <li className={ activeNav('Category') }><Link to="/category">Categories</Link></li>
+              <li className={ activeNav('Catalog') }><Link to="/catalog">Catalogue</Link></li>
               <li><Link to="/">New Arrivals</Link></li>
-              <li className={props.name === 'Contact' ? 'active' : ''}><Link to="/contact">Contact</Link></li>
+              <li className={ activeNav('Contact') }><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>

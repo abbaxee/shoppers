@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 class ShopProducts extends Component {
 
   sortShopItems = (filter) => {
-    return this.props.sortShop(this.props.shopItems, filter);
+    const { sortShop, shopItems} = this.props;
+    return sortShop(shopItems, filter);
   }
     
   render() {  
@@ -14,7 +15,7 @@ class ShopProducts extends Component {
         <div>
           <div className="row">
             <div className="col-md-12 mb-5">
-              <div className="float-md-left mb-4"><h2 className="text-black h5">Shop All</h2></div>
+              <div className="float-md-left mb-4"><h2 className="text-black h5">{ this.props.params? this.props.params.name+' Category' : 'Shop All'}</h2></div>
               <div className="d-flex">
                 <div className="dropdown mr-1 ml-md-auto">
                   <button type="button" className="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

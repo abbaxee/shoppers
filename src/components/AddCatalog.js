@@ -8,31 +8,46 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class AddCatalog extends Component {
+  // TODO Remove refs from forms and replace with a local state
   nameRef = React.createRef();
   categoryRef = React.createRef();
   priceRef = React.createRef();
-  // colorRef = React.createRef();
+  //TODO colorRef = React.createRef();
   smallRef = React.createRef();
   mediumRef = React.createRef();
   largeRef = React.createRef();
   descRef = React.createRef();
+  imageRef = React.createRef();
+
+  
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const item = {
-      name: this.nameRef.current.value,
-      category: this.categoryRef.current.value,
-      price: this.priceRef.current.value,
-      small: this.smallRef.current.value,
-      medium: this.mediumRef.current.value,
-      large: this.largeRef.current.value,
-      description: this.descRef.current.value
+    const file    = this.imageRef.current.files[0];
+    const reader  = new FileReader();
+    
+    if (file) {
+      reader.readAsDataURL(file);
     }
-    this.props.addItem(item);
-    e.currentTarget.reset();
+    
+    reader.onload = () => {
+      const item = {
+        name: this.nameRef.current.value,
+        category: this.categoryRef.current.value,
+        price: this.priceRef.current.value,
+        small: this.smallRef.current.value,
+        medium: this.mediumRef.current.value,
+        large: this.largeRef.current.value,
+        description: this.descRef.current.value,
+        image: reader.result 
+      }
+      const { addItem, history } = this.props;
+      addItem(item);
+      history.push('/catalog');
+    }
   }
 
-  render() {
+  render() { 
     return (
       <div>
         <Header name="Catalog"/>
@@ -47,11 +62,11 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black">Product Name<span className="text-danger">*</span></label>
-                      <input type="text" ref={this.nameRef} className="form-control" name="name" />
+                      <input type="text" ref={this.nameRef} className="form-control" name="name" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black">Product Category <span className="text-danger">*</span></label>
-                      <select ref={this.categoryRef} className="form-control">
+                      <select ref={this.categoryRef} className="form-control" required>
                         <option value="">Select a Category</option>    
                         <option value="Men">Men</option>
                         <option value="Women">Women</option>    
@@ -62,33 +77,33 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black"> Price <span className="text-danger">*</span></label>
-                      <input type="number" ref={this.priceRef} className="form-control" name="price" />
+                      <input type="number" ref={this.priceRef} className="form-control" name="price" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black"> Color <span className="text-danger">*</span></label>
-                      <input type="text" className="form-control" name="color" placeholder=""/>   
+                      <input type="text" className="form-control" name="color" required/>   
                   </div>
                   </div>
                   
                   <div className="form-group row"> 
                     <div className="col">
                       <label className="text-black"> Product Image <span className="text-danger">*</span></label>
-                      <input type="file" className="form-control" name="image" />
+                      <input type="file" ref={this.imageRef}  className="form-control" name="image" required/>
                     </div>
                   </div>
                   <h4 className="h3 mb-3 text-black">Product Sizes</h4>
                   <div className="form-group row">
                     <div className="col-md-2">
                       <label className="text-black"> Small </label>
-                      <input type="number" ref={this.smallRef} className="form-control" name="small" placeholder=""/>   
+                      <input type="number" ref={this.smallRef} className="form-control" name="small" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> medium </label>
-                      <input type="number" ref={this.mediumRef} className="form-control" name="medium" placeholder=""/>   
+                      <input type="number" ref={this.mediumRef} className="form-control" name="medium" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> Large </label>
-                      <input type="number" ref={this.largeRef} className="form-control" name="large" placeholder=""/>   
+                      <input type="number" ref={this.largeRef} className="form-control" name="large" placeholder="0" />   
                     </div>
                   </div>
                     
