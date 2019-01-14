@@ -6,7 +6,6 @@ import Footer from './Footer';
 export default () => {
   return (
     <div className="site-wrap">
-      <Header name="Contact" />
       <Pagination name="Contact" />
       <div className="site-section">
         <div className="container">

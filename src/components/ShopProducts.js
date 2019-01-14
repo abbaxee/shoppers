@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 
 
 class ShopProducts extends Component {
-
+  
   sortShopItems = (filter) => {
-    const { sortShop, shopItems} = this.props;
-    return sortShop(shopItems, filter);
+    return this.props.sortItems(this.props.shopProducts, filter)
   }
-    
-  render() {  
 
-      return (
+  render() {  
+      
+      return (  
         <div>
           <div className="row">
             <div className="col-md-12 mb-5">
@@ -30,7 +29,7 @@ class ShopProducts extends Component {
                 <div className="btn-group">
                   <button type="button" className="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuReference" data-toggle="dropdown">Sort Products</button>
                   <div className="dropdown-menu" aria-labelledby="dropdownMenuReference">
-                    <span className="dropdown-item" onClick={()=>this.sortShopItems('SORT_BY_NAME')}>Name, A to Z</span>
+                    <span className="dropdown-item" onClick={()=> this.sortShopItems('SORT_BY_NAME')}>Name, A to Z</span>
                     <span className="dropdown-item" onClick={()=>this.sortShopItems('SORT_BY_NAME_REVERSE')}>Name, Z to A</span>
                     <div className="dropdown-divider"></div>
                     <span className="dropdown-item" onClick={()=>this.sortShopItems('SORT_BY_PRICE')}>Price, low to high</span>
@@ -42,24 +41,24 @@ class ShopProducts extends Component {
           </div>
           
           <div className="row mb-5"> 
-
             { 
               this.props.shopItems.map( item => {
-              return(
-                <div key={item.id} className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                  <div className="block-4 text-center border">
-                    <figure className="block-4-image">
-                      <Link to={"/shop/"+item.id}><img src={ item.display_src } alt="" className="img-fluid" /></Link>
-                    </figure>
-                    <div className="block-4-text p-4">
-                      <h3><Link to={"/shop/"+item.id}>{item.name}</Link></h3>
-                      <p className="mb-0">Finding perfect product</p>
-                      <p className="text-primary font-weight-bold">${item.price}</p>
+                return(
+                  <div key={item.id} className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                    <div className="block-4 text-center border">
+                      <figure className="block-4-image">
+                        <Link to={"/shop/"+item.id}><img src={ item.display_src } alt="" className="img-fluid" /></Link>
+                      </figure>
+                      <div className="block-4-text p-4">
+                        <h3><Link to={"/shop/"+item.id}>{item.name}</Link></h3>
+                        <p className="mb-0">Finding perfect product</p>
+                        <p className="text-primary font-weight-bold">${item.price}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) ;
-            })}
+                ) ;
+              })
+            }
           </div>
 
           <div className="row" data-aos="fade-up">

@@ -8,22 +8,21 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class AddCatalog extends Component {
-  // TODO Remove refs from forms and replace with a local state
-  nameRef = React.createRef();
-  categoryRef = React.createRef();
-  priceRef = React.createRef();
-  //TODO colorRef = React.createRef();
-  smallRef = React.createRef();
-  mediumRef = React.createRef();
-  largeRef = React.createRef();
-  descRef = React.createRef();
-  imageRef = React.createRef();
-
   
+  state = {
+    form: {}
+  }
+
+  handleChange = (value, field) => {
+    const form = this.state.form;
+    form[field] = value;
+    this.setState({form})
+  }
 
   handleSubmit = (e) => {
+    const item = this.state.form;
     e.preventDefault();
-    const file    = this.imageRef.current.files[0];
+    const file    = item.image;
     const reader  = new FileReader();
     
     if (file) {
@@ -31,16 +30,7 @@ class AddCatalog extends Component {
     }
     
     reader.onload = () => {
-      const item = {
-        name: this.nameRef.current.value,
-        category: this.categoryRef.current.value,
-        price: this.priceRef.current.value,
-        small: this.smallRef.current.value,
-        medium: this.mediumRef.current.value,
-        large: this.largeRef.current.value,
-        description: this.descRef.current.value,
-        image: reader.result 
-      }
+      item.image = reader.result
       const { addItem, history } = this.props;
       addItem(item);
       history.push('/catalog');
@@ -50,7 +40,6 @@ class AddCatalog extends Component {
   render() { 
     return (
       <div>
-        <Header name="Catalog"/>
         <CatalogPagination name="Add" />
         <div className="site-section">
           <div className="container">
@@ -62,11 +51,11 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black">Product Name<span className="text-danger">*</span></label>
-                      <input type="text" ref={this.nameRef} className="form-control" name="name" required/>
+                      <input type="text" onChange={(e) => this.handleChange(e.target.value, 'name')} className="form-control" name="name" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black">Product Category <span className="text-danger">*</span></label>
-                      <select ref={this.categoryRef} className="form-control" required>
+                      <select onChange={(e) => this.handleChange(e.target.value, 'category')} className="form-control" required>
                         <option value="">Select a Category</option>    
                         <option value="Men">Men</option>
                         <option value="Women">Women</option>    
@@ -77,42 +66,42 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black"> Price <span className="text-danger">*</span></label>
-                      <input type="number" ref={this.priceRef} className="form-control" name="price" required/>
+                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'price')} className="form-control" name="price" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black"> Color <span className="text-danger">*</span></label>
-                      <input type="text" className="form-control" name="color" required/>   
+                      <input type="text" className="form-control" onChange={(e) => this.handleChange(e.target.value, 'color')} name="color" required/>   
                   </div>
                   </div>
                   
                   <div className="form-group row"> 
                     <div className="col">
                       <label className="text-black"> Product Image <span className="text-danger">*</span></label>
-                      <input type="file" ref={this.imageRef}  className="form-control" name="image" required/>
+                      <input type="file" onChange={(e) => this.handleChange(e.target.files[0], 'image')} className="form-control" name="image" required/>
                     </div>
                   </div>
                   <h4 className="h3 mb-3 text-black">Product Sizes</h4>
                   <div className="form-group row">
                     <div className="col-md-2">
                       <label className="text-black"> Small </label>
-                      <input type="number" ref={this.smallRef} className="form-control" name="small" placeholder="0" />   
+                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'small')} className="form-control" name="small" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> medium </label>
-                      <input type="number" ref={this.mediumRef} className="form-control" name="medium" placeholder="0" />   
+                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'medium')} className="form-control" name="medium" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> Large </label>
-                      <input type="number" ref={this.largeRef} className="form-control" name="large" placeholder="0" />   
+                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'large')} className="form-control" name="large" placeholder="0" />   
                     </div>
                   </div>
                     
                   <div className="form-group">
                     <label  className="text-black">Product Description</label>
-                    <textarea ref={this.descRef} name="description" cols="30" rows="5" className="form-control" placeholder="Write details here..."></textarea>
+                    <textarea onChange={(e) => this.handleChange(e.target.value, 'description')} name="description" cols="30" rows="5" className="form-control" placeholder="Write details here..."></textarea>
                   </div>
                   <div className="form-group">
-                    <input type="Submit" className="btn btn-primary btn-lg py-3 btn-block"  value=" ADD PRODUCT" />
+                    <input type="Submit" className="btn btn-primary btn-lg py-3 btn-block" value="ADD PRODUCT" readOnly/>
                   </div>
                 </div>
               </div>

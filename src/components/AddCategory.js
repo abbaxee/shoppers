@@ -7,11 +7,18 @@ import { addCategory } from '../reducers/categories'
 
 class AddCategory extends Component {
 
-    nameRef = React.createRef();
+    state = {
+      name: ""
+    }
+
+    handleChange = (e) => {
+      this.setState({name: e.target.value})
+    }
+    
 
     handleSubmit = (e) => {
       e.preventDefault();
-      const name = this.nameRef.current.value;
+      const name = this.state.name;
       const id = Date.now();
       const { addCategory, history } = this.props;
       addCategory(id, name);
@@ -21,7 +28,6 @@ class AddCategory extends Component {
     render() {
       return (
         <div>
-          <Header name="Catalog"/>
           <CatalogPagination name="AddCategory" />
           <div className="site-section">
             <div className="container">
@@ -33,7 +39,7 @@ class AddCategory extends Component {
                       <div className="form-group row">
                         <div className="col-sm-12">
                           <label htmlFor="c_fname" className="text-black">Category Name<span className="text-danger">*</span></label>
-                          <input type="text" ref={this.nameRef} name="name" className="form-control" required/>
+                          <input type="text" onChange={this.handleChange} value={this.state.value} name="name" className="form-control" required/>
                         </div>
                       </div>
                       <div className="form-group">

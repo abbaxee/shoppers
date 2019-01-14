@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 
 function Header(props) {
   
-  const activeNav = (name) => {
-    return props.name === name ? 'active' : '';
+  const activeNav = (path) => {
+    return props.location.pathname === path ? 'active' : '';
   }
   
   return (
@@ -51,13 +51,13 @@ function Header(props) {
         <nav className="site-navigation text-right text-md-center" role="navigation">
           <div className="container">
             <ul className="site-menu js-clone-nav d-none d-md-block">
-              <li className={ activeNav('Home') }> <Link to="/">Home</Link></li>
-              <li className={ activeNav('About') }> <Link to="/about">About </Link></li>
-              <li className={ activeNav('Shop') }><Link to="/shop">Shop</Link></li>
-              <li className={ activeNav('Category') }><Link to="/category">Categories</Link></li>
-              <li className={ activeNav('Catalog') }><Link to="/catalog">Catalogue</Link></li>
+              <li className={ activeNav('/') }> <Link to="/">Home</Link></li>
+              <li className={ activeNav('/about') }> <Link to="/about">About </Link></li>
+              <li className={ activeNav('/shop') }><Link to="/shop">Shop</Link></li>
+              <li className={ activeNav('/category') }><Link to="/category">Categories</Link></li>
+              <li className={ activeNav('/catalog') }><Link to="/catalog">Catalogue</Link></li>
               <li><Link to="/">New Arrivals</Link></li>
-              <li className={ activeNav('Contact') }><Link to="/contact">Contact</Link></li>
+              <li className={ activeNav('/contact') }><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
         </nav>
@@ -67,4 +67,4 @@ function Header(props) {
 }
 
 const mapStateToProps = ({cart}) => ({cart});
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

@@ -9,21 +9,25 @@ import { connect } from 'react-redux';
 
 class Catalog extends Component {
 
-    itemQuantitySum = (item) => {
-      return (item.quantity.small + item.quantity.medium + item.quantity.large);
+
+    itemQuantitySum = (quantity) => {
+      return (quantity.small + quantity.medium + quantity.large);
     }
 
     totalQuantitySum = (items) =>{
-      let total = 0;
-      items.forEach(item => {
-         total += this.itemQuantitySum(item);
-      })
+      // Get ec
+      const total = items.reduce(
+        ( itemsTotal, currentItem ) => itemsTotal + this.itemQuantitySum(currentItem.quantity),
+        0
+      );
       return total;
   }
 
     totalPriceSum = (items) => {
-      let total = 0;
-      items.map(item => total += item.price);
+      const total = items.reduce(
+        ( itemsTotal, currentItem ) => itemsTotal + currentItem.price,
+        0
+      );
       return total;
     }
 
@@ -38,7 +42,7 @@ class Catalog extends Component {
               <h2 className="h5 text-black">{item.name}</h2>
             </td>
             <td>${item.price}</td>
-            <td>{this.itemQuantitySum(item)}</td>
+            <td>{this.itemQuantitySum(item.quantity)}</td>
             <td><a href="/" className="btn btn-primary btn-sm">Update</a></td>
             <td><a href="/" className="btn btn-primary btn-sm">X</a></td>
           </tr>
@@ -50,7 +54,6 @@ class Catalog extends Component {
       const { shopItems } = this.props.shopItems;
       return (
         <div className="site-wrap">
-          <Header name="Catalog" />
           <Pagination name="Catalog"/>
           <div className="site-section">
             <div className="container">

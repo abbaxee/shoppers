@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import { siteMenuClone } from './script'
 import NotFound from './components/NotFound';
 import About from './components/About';
@@ -17,6 +17,9 @@ import ScrollToTop from './ScrollToTop'
 
 import { Provider } from 'react-redux';
 import store, { history } from './store';
+import Header from './components/Header';
+
+
 
 class App extends Component {
   componentDidMount() {
@@ -25,8 +28,9 @@ class App extends Component {
   render() {  
     return (
       <Provider store={store}>
-        <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
+        <Router history={history}>
           <ScrollToTop>
+            <Header />
             <Switch>
               <Route exact path="/" component={HomeComponent} />
               <Route path="/about" component={About} />

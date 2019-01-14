@@ -11,7 +11,6 @@ class About extends Component {
   render() {
     return (
       <div className="site-wrap">
-        <Header name='About'/>
         <Pagination name='About' />
 
         <div className="site-section border-bottom" data-aos="fade">

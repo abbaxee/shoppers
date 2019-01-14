@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 
 //Import Components
 import Header from './Header';
@@ -20,7 +21,6 @@ class Home extends Component {
     return (
       <div>
         <div className='site-wrap'>
-          <Header name='Home'/>
           <Cover />
           <Support />
           <Collections />
@@ -34,4 +34,4 @@ class Home extends Component {
 }
 
 const mapStateToProps = ({shopItems}) => ({shopItems});
-export default connect(mapStateToProps)(Home);
+export default withRouter(connect(mapStateToProps)(Home));

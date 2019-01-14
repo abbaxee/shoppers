@@ -1,23 +1,32 @@
 import shopItems from '../data/shopItems';
 
+// create an object for the default data
+const defaultState = {
+    shopItems
+};
+
 const ADD_ITEM = 'shopitem/ADD_ITEM';
 const SORT_ITEMS = 'shopitem/SORT_ITEMs'
 
 
-const filterItem = (storeItems, filter, items = {}) => {  
+const filterItem = (storeItems, filter,) => {  
     switch (filter) {
         case 'SORT_BY_NAME':            
-            items.shopItems = [...storeItems.sort((a, b) => a.name.localeCompare(b.name))];
-            return items;
+            return {
+                shopItems: [...storeItems.sort((a, b) => a.name.localeCompare(b.name))]
+            };  
         case 'SORT_BY_NAME_REVERSE':            
-            items.shopItems = [...storeItems.sort((a, b) => b.name.localeCompare(a.name))];
-            return items;
+            return {
+                shopItems: [...storeItems.sort((a, b) => b.name.localeCompare(a.name))]
+            };
         case 'SORT_BY_PRICE':            
-            items.shopItems = [...storeItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))];
-            return items;
+            return { 
+                shopItems: [...storeItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))]
+            }
         case 'SORT_BY_PRICE_REVERSE':            
-            items.shopItems = [...storeItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))];
-            return items;
+            return {
+                shopItems: [...storeItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))]
+            }
         default:
             return defaultState;
     }
@@ -38,11 +47,6 @@ const newItem = (item) => ({
     display_src : item.image,
     
 });
-
-// create an object for the default data
-const defaultState = {
-    shopItems
-};
 
 // Recducer
 export default function (state = defaultState, action) {

@@ -13,7 +13,6 @@ class Cart extends Component {
 		const {cart, removeFromCart} = this.props;
 		return (
 			<div className="site-wrap">
-				<Header name='Cart' />
 				<Pagination name='Cart' />
 				<ShoppingCart 
 					cart={cart.cartItems}

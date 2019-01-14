@@ -16,7 +16,6 @@ class Categories extends Component {
     const { categories } = this.props.categories;
     return (
       <div className="site-wrap">
-        <Header name="Category"/>
         <Pagination name="Category"/>
         <div className="border p-4 rounded mb-4 container" >
           <h3 className="mb-3 h6 text-uppercase text-black d-block">Categories</h3>

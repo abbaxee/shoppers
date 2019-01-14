@@ -52,7 +52,6 @@ class SingleItem extends Component {
 
     return (
       <div className="site-wrap">
-        <Header name="Shop"/>  
         <ShopPagination name={item.name} />
         <div className="site-section">
           <div className="container">
