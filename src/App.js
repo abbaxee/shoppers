@@ -13,11 +13,13 @@ import ShopComponent from './components/Shop';
 import CategoryComponent from './components/Category';
 import CatalogComponent from './components/Catalog';
 import AddCatalogComponent from './components/AddCatalog';
-import ScrollToTop from './ScrollToTop'
+import Header from './components/Header';
+import EditCatalogComponent from './components/EditCatalog';
 
+import ScrollToTop from './ScrollToTop'
 import { Provider } from 'react-redux';
 import store, { history } from './store';
-import Header from './components/Header';
+
 
 
 
@@ -42,6 +44,7 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route exact path="/catalog" component={CatalogComponent} />
               <Route path="/catalog/add" component={AddCatalogComponent} />
+              <Route path="/catalog/edit" component={EditCatalogComponent} />
               <Route path="/catalog/add-category" component={AddCategoryComponent} />
               <Route component={NotFound} />
             </Switch>    

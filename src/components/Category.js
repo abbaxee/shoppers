@@ -5,7 +5,6 @@ import ShopFilter from './ShopFilter';
 import { connect } from 'react-redux';
 
 import { bindActionCreators } from 'redux';
-import { sortShop } from '../reducers/shopItems'
 import ShopProducts from './ShopProducts';
 
 class Category extends Component {
@@ -73,8 +72,4 @@ class Category extends Component {
 
 const mapStateToProps = ({shopItems, categories}) => ({shopItems, categories});
 
-const mapDispachToProps = (dispatch) => {
-  return bindActionCreators({ sortShop }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispachToProps)(Category);
+export default connect(mapStateToProps)(Category);

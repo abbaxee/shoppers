@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import CatalogPagination from './CatalogPagination';
 import Footer from './Footer';
 import { connect } from 'react-redux';

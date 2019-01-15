@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Pagination from './Pagination';
-import Header from './Header';
 import Footer from './Footer';
 
 import { connect } from 'react-redux';

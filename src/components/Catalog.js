@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Header from './Header';
 import Pagination from './Pagination';
 import Footer from './Footer';
+import { removeItem } from '../reducers/shopItems'
 
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 
@@ -32,7 +33,7 @@ class Catalog extends Component {
     }
 
     renderCatalog = (items) => {
-      return items.map(item => {
+      return items.map( (item, index) => {
         return (
           <tr>
             <td className="product-thumbnail">
@@ -43,8 +44,8 @@ class Catalog extends Component {
             </td>
             <td>${item.price}</td>
             <td>{this.itemQuantitySum(item.quantity)}</td>
-            <td><a href="/" className="btn btn-primary btn-sm">Update</a></td>
-            <td><a href="/" className="btn btn-primary btn-sm">X</a></td>
+            <td><Link to={{pathname: '/catalog/edit',  state: index}} className="btn btn-primary btn-sm">Update</Link></td>
+            <td><button onClick={ () => this.props.removeItem(index) } className="btn btn-primary btn-sm">X</button></td>
           </tr>
         );
       });
@@ -98,7 +99,7 @@ class Catalog extends Component {
               </div>
               
               <div className="row mb-5">
-                <form className="col-md-12" method="post">
+                <div className="col-md-12">
                   <div className="site-blocks-table">
                     <table className="table table-bordered">
                       <thead>
@@ -116,7 +117,7 @@ class Catalog extends Component {
                       </tbody>
                     </table>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
@@ -126,4 +127,9 @@ class Catalog extends Component {
     }
 }
 const mapStateToProps = ({shopItems}) => ({shopItems});
-export default connect(mapStateToProps)(Catalog);
+
+const mapDispachToProps = (dispatch) => {
+  return bindActionCreators({ removeItem }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispachToProps)(Catalog);

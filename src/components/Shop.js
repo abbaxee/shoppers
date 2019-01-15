@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import Pagination from './Pagination';
 import ShopFilter from './ShopFilter';
 import ShopProducts from './ShopProducts';
@@ -15,24 +14,24 @@ class Shop extends Component {
   
   sortItems = (storeItems, filter) => {  
     switch (filter) {
-        case 'SORT_BY_NAME':            
-            return this.setState({
-                shopItems: [...storeItems.sort((a, b) => a.name.localeCompare(b.name))]
-            });  
-        case 'SORT_BY_NAME_REVERSE':            
-            return this.setState({
-                shopItems: [...storeItems.sort((a, b) => b.name.localeCompare(a.name))]
-            });
-        case 'SORT_BY_PRICE':            
-            return this.setState({ 
-                shopItems: [...storeItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))]
-            });
-        case 'SORT_BY_PRICE_REVERSE':            
-            return this.setState({
-                shopItems: [...storeItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))]
-            });
-        default:
-            return storeItems;
+      case 'SORT_BY_NAME':            
+        return this.setState({
+            shopItems: [...storeItems.sort((a, b) => a.name.localeCompare(b.name))]
+        });  
+      case 'SORT_BY_NAME_REVERSE':            
+        return this.setState({
+            shopItems: [...storeItems.sort((a, b) => b.name.localeCompare(a.name))]
+        });
+      case 'SORT_BY_PRICE':            
+        return this.setState({ 
+            shopItems: [...storeItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))]
+        });
+      case 'SORT_BY_PRICE_REVERSE':            
+        return this.setState({
+            shopItems: [...storeItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))]
+        });
+      default:
+          return storeItems;
     }
   }
 

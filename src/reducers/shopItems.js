@@ -6,31 +6,9 @@ const defaultState = {
 };
 
 const ADD_ITEM = 'shopitem/ADD_ITEM';
-const SORT_ITEMS = 'shopitem/SORT_ITEMs'
+const EDIT_ITEM = 'shopitem/EDIT_ITEM';
+const REMOVE_ITEM = 'cart/REMOVE_ITEM';
 
-
-const filterItem = (storeItems, filter,) => {  
-    switch (filter) {
-        case 'SORT_BY_NAME':            
-            return {
-                shopItems: [...storeItems.sort((a, b) => a.name.localeCompare(b.name))]
-            };  
-        case 'SORT_BY_NAME_REVERSE':            
-            return {
-                shopItems: [...storeItems.sort((a, b) => b.name.localeCompare(a.name))]
-            };
-        case 'SORT_BY_PRICE':            
-            return { 
-                shopItems: [...storeItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price))]
-            }
-        case 'SORT_BY_PRICE_REVERSE':            
-            return {
-                shopItems: [...storeItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price))]
-            }
-        default:
-            return defaultState;
-    }
-}
 
 const newItem = (item) => ({
     id: Date.now(),
@@ -56,27 +34,41 @@ export default function (state = defaultState, action) {
             return {
                 shopItems: [newItem(action.item), ...state.shopItems]
             };
-        case SORT_ITEMS:       
-            return filterItem(action.storeItems, action.filter);
+        case EDIT_ITEM:           
+            const items = [...state.shopItems]
+            items[action.index] = action.updatedItem; 
+            return {shopItems: items }
+        case REMOVE_ITEM:
+            return{
+                shopItems: [
+                    ...state.shopItems.slice(0, action.index),
+                    ...state.shopItems.slice(action.index + 1)
+                ]
+            }
         default:
             return state;
     }
 }
 
 // actions
-export const sortShop = (storeItems, filter) => {
-    return {
-      type: SORT_ITEMS,
-      filter,
-      storeItems
-    }
-}
-
-
 export function addItem(item) {
   return {
     type: ADD_ITEM,
     item
   }
 }
-  
+
+export function editItem(updatedItem, index) {
+    return {
+      type: EDIT_ITEM,
+      updatedItem,
+      index
+    }
+  }
+
+export const removeItem = (index) => {
+    return {
+        type: REMOVE_ITEM,
+        index
+    }
+}
