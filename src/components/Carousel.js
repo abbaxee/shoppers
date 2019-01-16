@@ -1,6 +1,8 @@
 import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 
+import { Link } from 'react-router-dom'
+
 export default (props) => {
   const featured =  props.shopItems.filter(item => item.isFeatured === true);
   return (
@@ -48,7 +50,7 @@ export default (props) => {
                             <img src={ item.display_src } alt="" className="img-fluid" />
                           </figure>
                           <div className="block-4-text p-4">
-                            <h3><a href="/">{item.name}</a></h3>
+                            <h3><Link to={"/shop/"+item.id}>{item.name}</Link></h3>
                             <p className="mb-0">Finding perfect t-shirt</p>
                             <p className="text-primary font-weight-bold">$50</p>
                           </div>

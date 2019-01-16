@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import Footer from './Footer';
 import Support from './Support';
 import Pagination from './Pagination';
 import Team from './Team';
@@ -41,7 +39,6 @@ class About extends Component {
         </div>
         <Team/>
         <Support/>
-        <Footer />
       </div>
     );
   }

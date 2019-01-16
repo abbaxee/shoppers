@@ -1,7 +1,5 @@
 import React from 'react'
-import Header from './Header';
 import Pagination from './Pagination';
-import Footer from './Footer';
 
 export default () => {
   return (
@@ -70,7 +68,6 @@ export default () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

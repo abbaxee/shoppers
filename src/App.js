@@ -19,6 +19,7 @@ import EditCatalogComponent from './components/EditCatalog';
 import ScrollToTop from './ScrollToTop'
 import { Provider } from 'react-redux';
 import store, { history } from './store';
+import Footer from './components/Footer';
 
 
 
@@ -47,7 +48,8 @@ class App extends Component {
               <Route path="/catalog/edit" component={EditCatalogComponent} />
               <Route path="/catalog/add-category" component={AddCategoryComponent} />
               <Route component={NotFound} />
-            </Switch>    
+            </Switch> 
+            <Footer />   
           </ScrollToTop>
         </Router>  
       </Provider>

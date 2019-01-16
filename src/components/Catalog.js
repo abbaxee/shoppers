@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import Pagination from './Pagination';
-import Footer from './Footer';
 import { removeItem } from '../reducers/shopItems'
 
 import { bindActionCreators } from 'redux';
@@ -121,7 +120,6 @@ class Catalog extends Component {
               </div>
             </div>
           </div>
-          <Footer/>
         </div>  
       );
     }

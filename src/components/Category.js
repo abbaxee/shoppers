@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import Pagination from './Pagination';
-import Footer from './Footer';
 import ShopFilter from './ShopFilter';
 import { connect } from 'react-redux';
 
-import { bindActionCreators } from 'redux';
 import ShopProducts from './ShopProducts';
 
 class Category extends Component {
@@ -45,26 +43,25 @@ class Category extends Component {
    
     return (
         <div className="site-wrap">
-            <Pagination name='Category'/>
-            <div className="site-section">
-              <div className="container">
-                
-                <div className="row mb-5">
-                  <div className="col-md-9 order-2">
-                    <ShopProducts shopItems={filteredItems} 
-                                  categories={categories} 
-                                  sortItems={this.sortItems}
-                                  params={params}
-                                  shopProducts={shopItems}
-                    />
-                  </div>
-                  <div className="col-md-3 order-1 mb-5 mb-md-0">
-                    <ShopFilter shopItems={shopItems} categories={categories}/>
-                  </div>
-                </div>                  
-              </div>
+          <Pagination name='Category'/>
+          <div className="site-section">
+            <div className="container">
+              
+              <div className="row mb-5">
+                <div className="col-md-9 order-2">
+                  <ShopProducts shopItems={filteredItems} 
+                                categories={categories} 
+                                sortItems={this.sortItems}
+                                params={params}
+                                shopProducts={shopItems}
+                  />
+                </div>
+                <div className="col-md-3 order-1 mb-5 mb-md-0">
+                  <ShopFilter shopItems={shopItems} categories={categories}/>
+                </div>
+              </div>                  
             </div>
-            <Footer />
+          </div>
         </div>
     );
   }

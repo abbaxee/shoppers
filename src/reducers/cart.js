@@ -22,7 +22,7 @@ function cart(state = defaultState, action) {
                 cartItems: [cartItem(action.item), ...state.cartItems]
             } 
         case REMOVE_FROM_CART:
-            return{
+            return {
                 cartItems: [
                     ...state.cartItems.slice(0, action.index),
                     ...state.cartItems.slice(action.index + 1)

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import Pagination from './Pagination';
 import ShoppingCart from './ShoppingCart';
-import Footer from './Footer';
 import { removeFromCart } from '../reducers/cart'
 
 import { connect } from 'react-redux';
@@ -18,7 +16,6 @@ class Cart extends Component {
 					cart={cart.cartItems}
 					removeFromCart={removeFromCart}
 				/>
-				<Footer />
 			</div>
 		);
     }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Pagination from './Pagination';
 import ShopFilter from './ShopFilter';
 import ShopProducts from './ShopProducts';
-import Footer from './Footer';
 
 import { connect } from 'react-redux';
 
@@ -59,8 +58,7 @@ class Shop extends Component {
               </div>
             </div>
           </div>
-        </div>  
-        <Footer />
+        </div>
       </div>
     );
   }

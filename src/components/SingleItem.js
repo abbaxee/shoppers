@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import ShopPagination from './ShopPagination';
-import Footer from './Footer';
 import { addToCart } from '../reducers/cart'
 
 import { bindActionCreators } from 'redux';
@@ -52,7 +50,7 @@ class SingleItem extends Component {
 
     return (
       <div className="site-wrap">
-        <ShopPagination name={item.name} />
+        <ShopPagination name={'item'} />
         <div className="site-section">
           <div className="container">
             <div className="row">
@@ -76,23 +74,20 @@ class SingleItem extends Component {
                 </div>
                 <div className="mb-5">
                   <div className="input-group mb-3" style={{maxWidth: 120}}>
-                  <div className="input-group-prepend">
-                    <button className="btn btn-outline-primary" onClick={ () => this.decrement() } type="button">-</button>
+                    <div className="input-group-prepend">
+                      <button className="btn btn-outline-primary" onClick={ () => this.decrement() } type="button">-</button>
+                    </div>
+                    <input type="text" className="form-control text-center" value={this.state.quantity} placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
+                    <div className="input-group-append">
+                      <button className="btn btn-outline-primary" onClick={ () => this.increment() } type="button">+</button>
+                    </div>
                   </div>
-                  <input type="text" className="form-control text-center" value={this.state.quantity} placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                  <div className="input-group-append">
-                    <button className="btn btn-outline-primary" onClick={ () => this.increment() } type="button">+</button>
-                  </div>
-                </div>
-
                 </div>
                 <p><button onClick={() => handleAddToCart() } className="buy-now btn btn-sm btn-primary">Add To Cart</button></p>
-
               </div>
             </div>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
 import CatalogPagination from './CatalogPagination';
 import { addItem } from '../reducers/shopItems'
 
@@ -108,7 +107,6 @@ class AddCatalog extends Component {
             </form>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

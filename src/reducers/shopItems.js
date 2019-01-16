@@ -7,7 +7,7 @@ const defaultState = {
 
 const ADD_ITEM = 'shopitem/ADD_ITEM';
 const EDIT_ITEM = 'shopitem/EDIT_ITEM';
-const REMOVE_ITEM = 'cart/REMOVE_ITEM';
+const DELETE_ITEM = 'cart/DELETE_ITEM';
 
 
 const newItem = (item) => ({
@@ -38,7 +38,7 @@ export default function (state = defaultState, action) {
             const items = [...state.shopItems]
             items[action.index] = action.updatedItem; 
             return {shopItems: items }
-        case REMOVE_ITEM:
+        case DELETE_ITEM:
             return{
                 shopItems: [
                     ...state.shopItems.slice(0, action.index),
@@ -68,7 +68,7 @@ export function editItem(updatedItem, index) {
 
 export const removeItem = (index) => {
     return {
-        type: REMOVE_ITEM,
+        type: DELETE_ITEM,
         index
     }
 }

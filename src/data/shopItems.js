@@ -3,6 +3,7 @@ const posts = [
       "name" : "Tank Top",
       "price": 100,
       "category": "Men",
+      "color": "Black",
       "isFeatured": true,
       "quantity": {
         "small": 10,
@@ -18,6 +19,7 @@ const posts = [
       "price": 150,
       "category": "Women",
       "isFeatured": true,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -32,6 +34,7 @@ const posts = [
       "price": 30,
       "category": "Children",
       "isFeatured": true,
+      "color": "White",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -46,6 +49,7 @@ const posts = [
       "price": 40,
       "category": "Women",
       "isFeatured": true,
+      "color": "White",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -60,6 +64,7 @@ const posts = [
       "category": "Men",
       "price": 55,
       "isFeatured": true,
+      "color": "White",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -74,6 +79,7 @@ const posts = [
       "price": 59,
       "category": "Men",
       "isFeatured": false,
+      "color": "Red",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -88,6 +94,7 @@ const posts = [
       "price": 54,
       "category": "Women",
       "isFeatured": false,
+      "color": "Red",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -102,6 +109,7 @@ const posts = [
       "price": 51,
       "category": "Children",
       "isFeatured": false,
+      "color": "Red",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -116,6 +124,7 @@ const posts = [
       "price": 60,
       "category": "Women",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -130,6 +139,7 @@ const posts = [
       "price": 66,
       "category": "Men",
       "isFeatured": false,
+      "color": "Blue",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -144,6 +154,7 @@ const posts = [
       "price": 57,
       "category": "Women",
       "isFeatured": false,
+      "color": "Blue",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -158,6 +169,7 @@ const posts = [
       "price": 61,
       "category": "Children",
       "isFeatured": false,
+      "color": "Gray",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -172,6 +184,7 @@ const posts = [
       "price": 70,
       "category": "Men",
       "isFeatured": false,
+      "color": "Gray",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -186,6 +199,7 @@ const posts = [
       "price": 19,
       "category": "Men",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -200,6 +214,7 @@ const posts = [
       "price": 20,
       "category": "Women",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -214,6 +229,7 @@ const posts = [
       "price": 10,
       "category": "Women",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -228,6 +244,7 @@ const posts = [
       "price": 40,
       "category": "Children",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,
@@ -242,6 +259,7 @@ const posts = [
       "price": 45,
       "category": "Men",
       "isFeatured": false,
+      "color": "Black",
       "quantity": {
         "small": 10,
         "medium": 4,

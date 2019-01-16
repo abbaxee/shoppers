@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CatalogPagination from './CatalogPagination';
-import Footer from './Footer';
 import { connect } from 'react-redux';
 import { addCategory } from '../reducers/categories'
 
@@ -50,7 +49,6 @@ class AddCategory extends Component {
                 </form>
               </div>
             </div>
-          <Footer/>
         </div>
       );
    }
