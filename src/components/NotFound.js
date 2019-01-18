@@ -1,8 +1,7 @@
 import React from 'react'
-
 export default () => {
   return (
-    <div className="site-wrap">
+    <div className="container">
       <h2>Page Not Found</h2>
     </div>
   )

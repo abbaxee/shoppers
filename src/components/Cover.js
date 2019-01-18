@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import BackgroundImage from '../images/hero_1.jpg'
 
 
@@ -13,7 +14,7 @@ export default () => {
               <div className="intro-text text-center text-md-left">
                 <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
                 <p>
-                  <a href="/shop" className="btn btn-sm btn-primary">Shop Now</a>
+                  <Link to="/shop" className="btn btn-sm btn-primary">Shop Now</Link>
                 </p>
               </div>
             </div>

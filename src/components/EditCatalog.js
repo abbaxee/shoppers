@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CatalogPagination from './CatalogPagination';
 import { editItem } from '../reducers/shopItems'
 
 import { bindActionCreators } from 'redux';
@@ -52,7 +51,6 @@ class EditCatalog extends Component {
     const item = this.state.formData;
     return (
       <div>
-        <CatalogPagination name="Edit" />
         <div className="site-section">
           <div className="container">
           <form onSubmit={this.handleSubmit}>
@@ -89,7 +87,7 @@ class EditCatalog extends Component {
                   <div className="form-group row"> 
                     <div className="col">
                       <label className="text-black"> Product Image <span className="text-danger">*</span></label><hr/>
-                      <img src={item.display_src} style={{width: 100}}/>
+                      <img src={item.display_src} alt="item" style={{width: 100}}/>
                       <input type="file" onChange={(e) => this.handleChange(e.target.files[0], 'image')} className="form-control" name="image" />
                     </div>
                   </div>

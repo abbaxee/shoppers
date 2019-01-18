@@ -20,9 +20,7 @@ import ScrollToTop from './ScrollToTop'
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 import Footer from './components/Footer';
-
-
-
+import Breadcrumb from './components/Breadcrumb';
 
 class App extends Component {
   componentDidMount() {
@@ -34,6 +32,7 @@ class App extends Component {
         <Router history={history}>
           <ScrollToTop>
             <Header />
+            <Breadcrumb />
             <Switch>
               <Route exact path="/" component={HomeComponent} />
               <Route path="/about" component={About} />

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Pagination from './Pagination';
 import ShopFilter from './ShopFilter';
 import { connect } from 'react-redux';
 
@@ -43,7 +42,6 @@ class Category extends Component {
    
     return (
         <div className="site-wrap">
-          <Pagination name='Category'/>
           <div className="site-section">
             <div className="container">
               

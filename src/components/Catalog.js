@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import Pagination from './Pagination';
 import { removeItem } from '../reducers/shopItems'
 
 import { bindActionCreators } from 'redux';
@@ -34,9 +33,9 @@ class Catalog extends Component {
     renderCatalog = (items) => {
       return items.map( (item, index) => {
         return (
-          <tr>
+          <tr key={item.id}>
             <td className="product-thumbnail">
-              <img src={item.display_src} alt="item image" className="img-fluid" />
+              <img src={item.display_src} alt="item" className="img-fluid" />
             </td>
             <td className="product-name">
               <h2 className="h5 text-black">{item.name}</h2>
@@ -54,7 +53,6 @@ class Catalog extends Component {
       const { shopItems } = this.props.shopItems;
       return (
         <div className="site-wrap">
-          <Pagination name="Catalog"/>
           <div className="site-section">
             <div className="container">
               <div className="row">

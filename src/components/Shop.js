@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Pagination from './Pagination';
 import ShopFilter from './ShopFilter';
 import ShopProducts from './ShopProducts';
 
@@ -40,8 +39,7 @@ class Shop extends Component {
     const { categories } =  this.props.categories;
 
     return (
-      <div>
-        <Pagination name="Shop" />   
+      <div> 
         <div className="site-section">
           <div className="container">
             <div className="row mb-5">

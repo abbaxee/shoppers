@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Pagination from './Pagination';
-
 import { connect } from 'react-redux';
 
 class Categories extends Component {
-
+  
   categoryItemSum = (category) => {
     return this.props.shopItems.shopItems.filter(item => item.category === category).length;
   }
@@ -14,7 +12,6 @@ class Categories extends Component {
     const { categories } = this.props.categories;
     return (
       <div className="site-wrap">
-        <Pagination name="Category"/>
         <div className="border p-4 rounded mb-4 container" >
           <h3 className="mb-3 h6 text-uppercase text-black d-block">Categories</h3>
           <ul className="list-unstyled mb-0">

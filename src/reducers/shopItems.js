@@ -14,6 +14,7 @@ const newItem = (item) => ({
     id: Date.now(),
     name: item.name,
     category: item.category,
+    color:item.color,
     price: parseFloat(item.price) || 0,
     isFeatured: false,
     quantity: {

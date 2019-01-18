@@ -29,12 +29,11 @@ export default (props) => {
                       <th className="product-remove">Remove</th>
                     </tr>
                   </thead>
-                  
-                  {
-                    props.cart.map( (item, index) => {
-                      return( 
-                        <tbody key={item.id}> 
-                          <tr>
+                  <tbody >
+                    {
+                      props.cart.map( (item, index) => {
+                        return( 
+                          <tr key={index}>
                             <td className="product-thumbnail">
                               <img src={item.image} alt="" className="img-fluid" />
                             </td>
@@ -46,11 +45,10 @@ export default (props) => {
                             <td>${item.totalPrice}</td>
                             <td><button onClick={() => props.removeFromCart(index)} className="btn btn-primary btn-sm">X</button></td>
                           </tr>
-                        </tbody>
-                      )
-                    })
-                  }
-                  
+                        )
+                      })
+                    }
+                  </tbody>
                 </table>
               </div>
             </div>

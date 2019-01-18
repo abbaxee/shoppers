@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CatalogPagination from './CatalogPagination';
 import { connect } from 'react-redux';
 import { addCategory } from '../reducers/categories'
 
@@ -26,7 +25,6 @@ class AddCategory extends Component {
     render() {
       return (
         <div>
-          <CatalogPagination name="AddCategory" />
           <div className="site-section">
             <div className="container">
               <form onSubmit={this.handleSubmit}>

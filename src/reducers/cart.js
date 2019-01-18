@@ -18,6 +18,15 @@ const cartItem = (item) => ({
 function cart(state = defaultState, action) {
     switch (action.type) {
         case ADD_TO_CART:
+            // var idExist = state.cartItems.findIndex((item) =>item.id === cartItem(action.item).id);
+            // console.log(idExist)
+            // if(idExist > -1) {
+            //     const items = [...state.cartItems]
+            //     items[idExist].quantity += action.item.quantity;
+            //     return {
+            //         cartItems: items
+            //     }
+            // }
             return {
                 cartItems: [cartItem(action.item), ...state.cartItems]
             } 

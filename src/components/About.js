@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Support from './Support';
-import Pagination from './Pagination';
 import Team from './Team';
 
 import blog_1 from '../images/blog_1.jpg'
@@ -9,8 +8,6 @@ class About extends Component {
   render() {
     return (
       <div className="site-wrap">
-        <Pagination name='About' />
-
         <div className="site-section border-bottom" data-aos="fade">
           <div className="container">
             <div className="row mb-5">

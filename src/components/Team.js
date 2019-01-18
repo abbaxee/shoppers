@@ -17,7 +17,6 @@ export default () => {
           </div>
           <div className="row">
             <div className="col-md-6 col-lg-3">
-    
               <div className="block-38 text-center">
                 <div className="block-38-img">
                   <div className="block-38-header">

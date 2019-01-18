@@ -1,4 +1,4 @@
-import Popper from 'popper.js';
+import 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import AOS from 'aos';
 import React from 'react';

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Pagination from './Pagination';
 import ShoppingCart from './ShoppingCart';
 import { removeFromCart } from '../reducers/cart'
 
@@ -11,7 +10,6 @@ class Cart extends Component {
 		const {cart, removeFromCart} = this.props;
 		return (
 			<div className="site-wrap">
-				<Pagination name='Cart' />
 				<ShoppingCart 
 					cart={cart.cartItems}
 					removeFromCart={removeFromCart}

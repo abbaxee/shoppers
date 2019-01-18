@@ -42,15 +42,15 @@ class ShopProducts extends Component {
           
           <div className="row mb-5"> 
             { 
-              this.props.shopItems.map( item => {
+              this.props.shopItems.map( (item, index) => {
                 return(
-                  <div key={item.id} className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                  <div key={index} className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                     <div className="block-4 text-center border">
                       <figure className="block-4-image">
-                        <Link to={"/shop/"+item.id}><img src={ item.display_src } alt="" className="img-fluid" /></Link>
+                        <Link to={{pathname: "/shop/"+item.id, index}}><img src={ item.display_src } alt="" className="img-fluid" /></Link>
                       </figure>
                       <div className="block-4-text p-4">
-                        <h3><Link to={"/shop/"+item.id}>{item.name}</Link></h3>
+                        <h3><Link to={{pathname: "/shop/"+item.id, index}}>{item.name}</Link></h3>
                         <p className="mb-0">Finding perfect product</p>
                         <p className="text-primary font-weight-bold">${item.price}</p>
                       </div>
@@ -65,13 +65,13 @@ class ShopProducts extends Component {
             <div className="col-md-12 text-center">
               <div className="site-block-27">
                 <ul>
-                  <li><Link to="/">&lt;</Link></li>
+                  <li><Link to="/shop">&lt;</Link></li>
                   <li className="active"><span>1</span></li>
-                  <li><Link to="/">2</Link></li>
-                  <li><Link to="/">3</Link></li>
-                  <li><Link to="/">4</Link></li>
-                  <li><Link to="/">5</Link></li>
-                  <li><Link to="/">&gt;</Link></li>
+                  <li><Link to="/shop">2</Link></li>
+                  <li><Link to="/shop">3</Link></li>
+                  <li><Link to="/shop">4</Link></li>
+                  <li><Link to="/shop">5</Link></li>
+                  <li><Link to="/shop">&gt;</Link></li>
                 </ul>
               </div>
             </div>

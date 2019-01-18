@@ -1,10 +1,8 @@
 import React from 'react'
-import Pagination from './Pagination';
 
 export default () => {
   return (
     <div className="site-wrap">
-      <Pagination name="Contact" />
       <div className="site-section">
         <div className="container">
           <div className="row">
