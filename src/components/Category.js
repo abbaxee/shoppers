@@ -47,12 +47,12 @@ class Category extends Component {
               
               <div className="row mb-5">
                 <div className="col-md-9 order-2">
-                  <ShopProducts shopItems={filteredItems} 
-                                categories={categories} 
-                                sortItems={this.sortItems}
-                                params={params}
-                                shopProducts={shopItems}
-                  />
+                  <ShopProducts 
+                    shopItems={filteredItems} 
+                    categories={categories} 
+                    sortItems={this.sortItems}
+                    params={params}
+                    shopProducts={shopItems} />
                 </div>
                 <div className="col-md-3 order-1 mb-5 mb-md-0">
                   <ShopFilter shopItems={shopItems} categories={categories}/>

@@ -28,6 +28,9 @@ a {
 .text-primary {
     color: #7971ea!important;
 }
+header {
+  position: fixed;
+}
 .site-wrap:before {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;

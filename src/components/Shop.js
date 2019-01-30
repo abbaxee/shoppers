@@ -44,15 +44,14 @@ class Shop extends Component {
           <div className="container">
             <div className="row mb-5">
               <div className="col-md-9 order-2">
-                <ShopProducts shopItems={this.state.shopItems} 
-                              categories={categories} 
-                              sortItems={this.sortItems}
-                              shopProducts={shopItems}
-                              />
-                              
+                <ShopProducts 
+                  shopItems={this.state.shopItems} 
+                  categories={categories} 
+                  sortItems={this.sortItems}
+                  shopProducts={shopItems} />                 
               </div>
               <div className="col-md-3 order-1 mb-5 mb-md-0">
-                <ShopFilter shopItems={shopItems} categories={categories}/>
+                <ShopFilter shopItems={shopItems} categories={categories} />
               </div>
             </div>
           </div>

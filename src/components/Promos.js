@@ -18,7 +18,7 @@ export default () => {
             </div>
             <div className="col-md-12 col-lg-5 text-center pl-md-5">
               <h2><Link to="/shop">50% less in all items</Link></h2>
-              <p className="post-meta mb-4">By <Link to="/">Carl Smith</Link> <span className="block-8-sep">•</span> September 3, 2018</p>
+              <p className="post-meta mb-4">By <Link to="/">Abdullahi Aliyu</Link> <span className="block-8-sep">•</span> September 3, 2018</p>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
               <p><Link to="/shop" className="btn btn-primary btn-sm">Shop Now</Link></p>
             </div>

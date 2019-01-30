@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { editItem } from '../reducers/shopItems'
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class EditCatalog extends Component {
-  
+
   state = {
     formData: {...this.props.shopItems.shopItems[this.props.location.state]}
   }

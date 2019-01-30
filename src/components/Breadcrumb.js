@@ -2,9 +2,9 @@ import React from 'react'
 import { withRouter} from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-function Pagination(props) {
+function BreadCrumb(props) {
 	
-	if(props.location.pathname === '/') return <div></div>;
+	if(props.location.pathname === '/') return null;
 
 	const paths = props.location.pathname.split('/').map((p, i, arr) => {
 
@@ -38,4 +38,4 @@ function Pagination(props) {
   )
 }
 
-export default withRouter(Pagination);
+export default withRouter(BreadCrumb);

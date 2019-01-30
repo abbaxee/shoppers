@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import { siteMenuClone } from './script'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import NotFound from './components/NotFound';
 import About from './components/About';
 import CartComponent from './components/Cart'
@@ -23,13 +22,11 @@ import Footer from './components/Footer';
 import Breadcrumb from './components/Breadcrumb';
 
 class App extends Component {
-  componentDidMount() {
-    siteMenuClone();
-  }
+  
   render() {  
     return (
       <Provider store={store}>
-        <Router history={history}>
+        <BrowserRouter history={history}>
           <ScrollToTop>
             <Header />
             <Breadcrumb />
@@ -50,7 +47,7 @@ class App extends Component {
             </Switch> 
             <Footer />   
           </ScrollToTop>
-        </Router>  
+        </BrowserRouter>  
       </Provider>
     );
   }

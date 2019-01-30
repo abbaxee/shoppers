@@ -3,7 +3,6 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import AOS from 'aos';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './script';
 
 // Stylesheets Imports
 import './fonts/icomoon/style.css'

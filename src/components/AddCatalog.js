@@ -10,10 +10,13 @@ class AddCatalog extends Component {
     form: {}
   }
 
-  handleChange = (value, field) => {
-    const form = this.state.form;
-    form[field] = value;
-    this.setState({form})
+  handleChange = (e) => {
+    const target = e.target;
+    const value = target.type === 'file' ? target.files[0] : target.value;
+    const name = target.name;
+    const {form} = this.state;
+    form[name] = value;
+    this.setState({form});
   }
 
   handleSubmit = (e) => {
@@ -47,11 +50,11 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black">Product Name<span className="text-danger">*</span></label>
-                      <input type="text" onChange={(e) => this.handleChange(e.target.value, 'name')} className="form-control" name="name" required/>
+                      <input type="text" onChange={this.handleChange} className="form-control" name="name" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black">Product Category <span className="text-danger">*</span></label>
-                      <select onChange={(e) => this.handleChange(e.target.value, 'category')} className="form-control" required>
+                      <select onChange={this.handleChange} name="category" className="form-control" required>
                         <option value="">Select a Category</option>    
                         <option value="Men">Men</option>
                         <option value="Women">Women</option>    
@@ -62,39 +65,39 @@ class AddCatalog extends Component {
                   <div className="form-group row">
                     <div className="col-md-6">
                       <label className="text-black"> Price <span className="text-danger">*</span></label>
-                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'price')} className="form-control" name="price" required/>
+                      <input type="number" onChange={this.handleChange} className="form-control" name="price" required/>
                     </div>
                     <div className="col-md-6">
                       <label className="text-black"> Color <span className="text-danger">*</span></label>
-                      <input type="text" className="form-control" onChange={(e) => this.handleChange(e.target.value, 'color')} name="color" required/>   
+                      <input type="text" className="form-control" onChange={this.handleChange} name="color" required/>   
                   </div>
                   </div>
                   
                   <div className="form-group row"> 
                     <div className="col">
                       <label className="text-black"> Product Image <span className="text-danger">*</span></label>
-                      <input type="file" onChange={(e) => this.handleChange(e.target.files[0], 'image')} className="form-control" name="image" required/>
+                      <input type="file" onChange={this.handleChange} className="form-control" name="image" required/>
                     </div>
                   </div>
                   <h4 className="h3 mb-3 text-black">Product Sizes</h4>
                   <div className="form-group row">
                     <div className="col-md-2">
                       <label className="text-black"> Small </label>
-                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'small')} className="form-control" name="small" placeholder="0" />   
+                      <input type="number" onChange={this.handleChange} className="form-control" name="small" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> medium </label>
-                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'medium')} className="form-control" name="medium" placeholder="0" />   
+                      <input type="number" onChange={this.handleChange} className="form-control" name="medium" placeholder="0" />   
                     </div>
                     <div className="col-md-2">
                       <label className="text-black"> Large </label>
-                      <input type="number" onChange={(e) => this.handleChange(e.target.value, 'large')} className="form-control" name="large" placeholder="0" />   
+                      <input type="number" onChange={this.handleChange} className="form-control" name="large" placeholder="0" />   
                     </div>
                   </div>
                     
                   <div className="form-group">
                     <label  className="text-black">Product Description</label>
-                    <textarea onChange={(e) => this.handleChange(e.target.value, 'description')} name="description" cols="30" rows="5" className="form-control" placeholder="Write details here..."></textarea>
+                    <textarea onChange={this.handleChange} name="description" cols="30" rows="5" className="form-control" placeholder="Write details here..."></textarea>
                   </div>
                   <div className="form-group">
                     <input type="Submit" className="btn btn-primary btn-lg py-3 btn-block" value="ADD PRODUCT" readOnly/>
