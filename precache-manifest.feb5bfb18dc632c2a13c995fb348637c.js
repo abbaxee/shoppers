@@ -56,16 +56,16 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/men.125f6008.jpg"
   },
   {
+    "revision": "2cb8dc8186e8827cca3b6beebe4ef1c6",
+    "url": "/shoppers/static/media/icomoon.2cb8dc81.eot"
+  },
+  {
     "revision": "bab8cf81a530d89b36f24a80649c5e25",
     "url": "/shoppers/static/media/icomoon.bab8cf81.ttf"
   },
   {
     "revision": "62f33c03d096cdc058166bd6fbf7e4d0",
     "url": "/shoppers/static/media/icomoon.62f33c03.woff"
-  },
-  {
-    "revision": "2cb8dc8186e8827cca3b6beebe4ef1c6",
-    "url": "/shoppers/static/media/icomoon.2cb8dc81.eot"
   },
   {
     "revision": "ccaf9335295d9fca8196",
