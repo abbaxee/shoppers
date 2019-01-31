@@ -26,7 +26,7 @@ class App extends Component {
   render() {  
     return (
       <Provider store={store}>
-        <BrowserRouter history={history}>
+        <BrowserRouter basename="/shoppers" history={history}>
           <ScrollToTop>
             <Header />
             <Breadcrumb />
