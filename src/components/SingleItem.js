@@ -29,7 +29,8 @@ class SingleItem extends Component {
   handleQuantityInputChange = e => {
     const { availableSizesQuantity } = this.state;
     this.setState({
-      quantity: parseInt(e.target.value) > availableSizesQuantity ? availableSizesQuantity : parseInt(e.target.value || 0)
+      quantity: parseInt(e.target.value) > availableSizesQuantity 
+      ? availableSizesQuantity : parseInt(e.target.value || 0)
     })
   }
 
