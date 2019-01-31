@@ -1,3 +1,7 @@
+## Shoppers
+An e-commerce site built with react.js and redux. You can find the live Demo [here](https://abbaxee.github.io/shoppers/).<br>
+Note: the images are randomly generated from Lorem Picsum and therefore might change on each browser refresh
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
