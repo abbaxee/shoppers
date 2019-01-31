@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/person_3.b3fad880.jpg"
   },
   {
-    "revision": "f17b39ab9aa457ae8d50",
+    "revision": "fa4fa9f3f10dfa767f24",
     "url": "/shoppers/static/css/main.691332df.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/person_2.545486c3.jpg"
   },
   {
-    "revision": "f17b39ab9aa457ae8d50",
-    "url": "/shoppers/static/js/main.f17b39ab.chunk.js"
+    "revision": "fa4fa9f3f10dfa767f24",
+    "url": "/shoppers/static/js/main.fa4fa9f3.chunk.js"
   },
   {
     "revision": "ccd8da51b1c9f317975f0a5ef3273196",
@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/men.125f6008.jpg"
   },
   {
-    "revision": "2cb8dc8186e8827cca3b6beebe4ef1c6",
-    "url": "/shoppers/static/media/icomoon.2cb8dc81.eot"
-  },
-  {
     "revision": "bab8cf81a530d89b36f24a80649c5e25",
     "url": "/shoppers/static/media/icomoon.bab8cf81.ttf"
+  },
+  {
+    "revision": "2cb8dc8186e8827cca3b6beebe4ef1c6",
+    "url": "/shoppers/static/media/icomoon.2cb8dc81.eot"
   },
   {
     "revision": "62f33c03d096cdc058166bd6fbf7e4d0",
@@ -72,7 +72,7 @@ self.__precacheManifest = [
     "url": "/shoppers/static/css/1.3662e1d2.chunk.css"
   },
   {
-    "revision": "f8e8e92e7021b2055b999c7b5059bcb4",
+    "revision": "e49c8842355a03ca3af4ac6a3924e733",
     "url": "/shoppers/index.html"
   }
 ];
