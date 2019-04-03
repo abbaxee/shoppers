@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Women from '../images/women.jpg'
-import Children from '../images/children.jpg'
-import Men from '../images/men.jpg'
+import Women from '../../images/women.jpg'
+import Children from '../../images/children.jpg'
+import Men from '../../images/men.jpg'
 
 export default () => {
   return (

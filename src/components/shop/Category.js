@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import ShopFilter from './ShopFilter';
 import { connect } from 'react-redux';
-
+import ShopFilter from './ShopFilter';
 import ShopProducts from './ShopProducts';
 
 class Category extends Component {

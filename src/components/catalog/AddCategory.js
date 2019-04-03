@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCategory } from '../reducers/categories'
+import { addCategory } from '../../reducers/categories'
 
 
 class AddCategory extends Component {

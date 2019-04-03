@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import BackgroundImage from '../images/hero_1.jpg'
+import BackgroundImage from '../../images/hero_1.jpg'
 
 export default () => {
   return (

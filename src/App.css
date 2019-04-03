@@ -233,7 +233,7 @@ header {
     border-bottom: 1px solid #f3f3f4 !important; }
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
-    .site-navbar .site-navigation .site-menu .active > a {
+    .site-navbar .site-navigation .site-menu a.active  {
       color: #7971ea; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
@@ -400,13 +400,14 @@ header {
       padding: 10px 20px;
       display: block;
       position: relative;
-      color: #212529; }
+      color: #212529; 
+      text-transform: uppercase; }
       .site-mobile-menu .site-nav-wrap a:hover {
         color: #7971ea; }
     .site-mobile-menu .site-nav-wrap li {
       position: relative;
       display: block; }
-      .site-mobile-menu .site-nav-wrap li.active > a {
+      .site-mobile-menu .site-nav-wrap a.active {
         color: #7971ea; }
     .site-mobile-menu .site-nav-wrap .arrow-collapse {
       position: absolute;

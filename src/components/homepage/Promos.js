@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import blog_1 from '../images/blog_1.jpg'
+import blog_1 from '../../images/blog_1.jpg'
 
 export default () => {
   return (

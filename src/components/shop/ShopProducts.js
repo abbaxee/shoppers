@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Product from './Product';
 
 
 class ShopProducts extends Component {
@@ -14,7 +15,7 @@ class ShopProducts extends Component {
         <div>
           <div className="row">
             <div className="col-md-12 mb-5">
-              <div className="float-md-left mb-4"><h2 className="text-black h5">{ this.props.params? this.props.params.name+' Category' : 'Shop All'}</h2></div>
+              <div className="float-md-left mb-4"><h2 className="text-black h5">{ this.props.params ? this.props.params.name+' Category' : 'Shop All'}</h2></div>
               <div className="d-flex">
                 <div className="dropdown mr-1 ml-md-auto">
                   <button type="button" className="btn btn-secondary btn-sm dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,20 +44,7 @@ class ShopProducts extends Component {
           <div className="row mb-5"> 
             { 
               this.props.shopItems.map( (item, index) => {
-                return(
-                  <div key={index} className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                    <div className="block-4 text-center border">
-                      <figure className="block-4-image">
-                        <Link to={{pathname: "/shop/"+item.id, state: index}}><img src={ item.display_src } alt={item.name} className="img-fluid" /></Link>
-                      </figure>
-                      <div className="block-4-text p-4">
-                        <h3><Link to={{pathname: "/shop/"+item.id, state: index}}>{item.name}</Link></h3>
-                        <p className="mb-0">Finding perfect product</p>
-                        <p className="text-primary font-weight-bold">${item.price}</p>
-                      </div>
-                    </div>
-                  </div>
-                ) ;
+                return <Product item={item} index={index} />
               })
             }
           </div>

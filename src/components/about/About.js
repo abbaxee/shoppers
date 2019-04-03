@@ -1,8 +1,8 @@
 import React from 'react';
-import Support from './Support';
+import Support from '../common/Support';
 import Team from './Team';
 
-import blog_1 from '../images/blog_1.jpg'
+import blog_1 from '../../images/blog_1.jpg'
 
 export default () => {
   return (

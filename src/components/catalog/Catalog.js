@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { removeItem } from '../reducers/shopItems'
+import { removeItem } from '../../reducers/shopItems'
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -69,7 +69,7 @@ class Catalog extends Component {
                     <Link to="/catalog/add" className="btn btn-primary btn-sm btn-block">Add New Item</Link>
                   </div>
                   <div className="col-md-6">
-                    <Link to="/catalog/add-category"className="btn btn-outline-primary btn-sm btn-block">
+                    <Link to="/catalog/add-category" className="btn btn-outline-primary btn-sm btn-block">
                       Add New Category
                     </Link>
                   </div>

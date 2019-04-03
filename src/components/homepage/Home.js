@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 
 //Import Components
-import Support from './Support';
+import Support from '../common/Support';
 import Collections from './Collections';
 import Carousel from './Carousel';
 import Promos from './Promos';
 import { connect } from 'react-redux';
 
 import { Link } from 'react-router-dom'
-import BackgroundImage from '../images/hero_1.jpg'
+import BackgroundImage from '../../images/hero_1.jpg'
 
 class Home extends Component {
 

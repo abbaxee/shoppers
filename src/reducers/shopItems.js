@@ -18,9 +18,9 @@ const newItem = (item) => ({
     price: parseFloat(item.price) || 0,
     isFeatured: false,
     quantity: {
-        small: parseInt(item.small) || 0,
-        medium: parseInt(item.medium) || 0,
-        large: parseInt(item.large) || 0,
+        small: parseInt(item.quantity.small) || 0,
+        medium: parseInt(item.quantity.medium) || 0,
+        large: parseInt(item.quantity.large) || 0,
     },
     description: item.description,
     display_src : item.image,
