@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b3fad880beee2d67cab3cc3e0ca67bca",
-    "url": "/shoppers/static/media/person_3.b3fad880.jpg"
+    "revision": "409d5802a4611b2d2337",
+    "url": "/shoppers/static/css/main.f928ded7.chunk.css"
   },
   {
-    "revision": "fa4fa9f3f10dfa767f24",
-    "url": "/shoppers/static/css/main.691332df.chunk.css"
+    "revision": "409d5802a4611b2d2337",
+    "url": "/shoppers/static/js/main.409d5802.chunk.js"
   },
   {
-    "revision": "302fbc0aa5dcec40d385772d64baad2c",
-    "url": "/shoppers/static/media/icomoon.302fbc0a.svg"
+    "revision": "74b62ad2bbfa3d63f3e8",
+    "url": "/shoppers/static/css/1.c46501a2.chunk.css"
   },
   {
-    "revision": "ccaf9335295d9fca8196",
-    "url": "/shoppers/static/js/1.ccaf9335.chunk.js"
+    "revision": "74b62ad2bbfa3d63f3e8",
+    "url": "/shoppers/static/js/1.74b62ad2.chunk.js"
   },
   {
     "revision": "3c9934308fd4c8ebb351",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/person_2.545486c3.jpg"
   },
   {
-    "revision": "fa4fa9f3f10dfa767f24",
-    "url": "/shoppers/static/js/main.fa4fa9f3.chunk.js"
+    "revision": "b3fad880beee2d67cab3cc3e0ca67bca",
+    "url": "/shoppers/static/media/person_3.b3fad880.jpg"
   },
   {
     "revision": "ccd8da51b1c9f317975f0a5ef3273196",
@@ -68,11 +68,11 @@ self.__precacheManifest = [
     "url": "/shoppers/static/media/icomoon.62f33c03.woff"
   },
   {
-    "revision": "ccaf9335295d9fca8196",
-    "url": "/shoppers/static/css/1.3662e1d2.chunk.css"
+    "revision": "302fbc0aa5dcec40d385772d64baad2c",
+    "url": "/shoppers/static/media/icomoon.302fbc0a.svg"
   },
   {
-    "revision": "e49c8842355a03ca3af4ac6a3924e733",
+    "revision": "42af3d21c7890c2e377c0933573a10ff",
     "url": "/shoppers/index.html"
   }
 ];
